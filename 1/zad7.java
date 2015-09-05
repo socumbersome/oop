@@ -1,0 +1,35 @@
+ODP: raczej nie
+
+public class Student {
+	
+	public ???(?) {
+		UsosWebPage.show();
+	}
+}
+
+public class UsosWebPage {
+	
+	public show() {
+		GradeController.getStudentGradeInfo();
+	}
+}
+
+public class GradeController {
+	Student student;
+	Layout pageLayout;
+	public getStudentGradeInfo() {
+		List<Course> courses = student.getCourses();
+		for(Course c : courses) {
+			Mark mark = course.getMark(student);
+			// what to do with it?
+		}
+		// some update to pageLayout, I guess...
+		return pageLayout;
+	}
+}
+
+public class Course {
+	public getMark(Student s) {
+		return getValue(); // getValue(s) ??
+	}
+}

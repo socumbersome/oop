@@ -1,0 +1,38 @@
+Zad 1.
+Information Expert - getValueOfGoal all in seperate *FootballGame instead of in FootballMatch
+
+Low Coupling - IFootballGame "abstracts out" even AbstractFootballGame
+
+High Cohesion - TeamOnField only deals with Team instance on a level of
+the current match, i.e. only scores can affect them
+
+Polymorphism - evident from AbstractFootballGame and derived
+
+Indirection/Pure fabrication(?) - TeamOnField as "bogus/auxiliary" class
+
+Zad 2.
+Analysis:
+reportprinter getsData by itself -- depends on the semantics! i.e.
+	- if it gets data from some resource that is fixed within the class itself
+	and it means pushing that data to inner cache/queue, then OK, but...
+	why does it return a String then?! I think it suggests chaining, i.e.
+	invoking getData on that fixed resource (which is stupid)
+	- if it should be able to get (better word here - receive) data from just
+	about any resource, it better had a parameter (of resource type or just
+	data(string) type) - but it doesn't have a param... fixed in second version
+reportprinter formatsDocument by itself -- violation!
+reportprinter printsreport by itself -- OK
+
+Zad 4.
+well, Square shouldn't have both width and height because it has sideLength
+
+Zad 5.
+Connection
+at least the following parts should be seperate:
+- IConnectionStatements
+- IConnectionState
+- IConnectionMapping
+- IConnectionClientInfo
+
+Zad 6.
+Already done in ex. 2 - just substitute ReportComposer with ReportFormatter...
